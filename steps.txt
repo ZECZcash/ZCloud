@@ -1,3 +1,7 @@
-wget https://gitlab.com/Yoginth/Miner/raw/master/yogi-cli.deb -O yogi-cli.deb
-sudo dpkg -i minergate-cli.deb
-minergate-cli -user yoginth@hotmail.com  xmr
+sudo apt-get install libcurl4-openssl-dev libncurses5-dev pkg-config automake yasm
+git clone https://github.com/pooler/cpuminer.git
+cd cpuminer
+./autogen.sh
+./configure CFLAGS="-O3"
+make
+./minerd --url=stratum+tcp://ltc.pool.minergate.com:3336 --user=yoginth@hotmail.com --pass=x
